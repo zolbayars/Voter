@@ -1,0 +1,36 @@
+extends layout
+
+block head
+    title() #{poll.question}
+    meta(property="og:url"         content=url)
+    meta(property="og:type"        content="website")
+    meta(property="og:title"       content="Voting app - " + poll.question)
+    meta(property="og:description" content="An elegant voting app. Ask your question and get votes. This question: " + poll.question)
+    meta(property="og:image"       content="/public/img/voting_logo.jpg")
+
+block content
+    div(class="inner-container")
+        div(class="alert alert-danger alert-dismissible" id="poll-detail-alert")
+            button(type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true") &times;
+            
+        h2 #{poll.question}
+        div(class="fb-share-button" data-href=url 
+          data-layout="button_count" data-size="large" data-mobile-iframe="false")      
+        canvas(id="poll-detail-chart" width="300" height="300")
+        form(id="add-vote-form" action="/api/polls/vote/" method="POST")
+            div(class="form-group poll-detail-form")
+                select(class="form-control" id="poll-select" name="selected-option")
+                    option(selected="selected") Select to vote for your choice 
+                    each opt in poll.options
+                        option(value=opt.option) #{opt.option}
+                    option(value="custom_option") Add my own option
+                input(type="text" class="form-control vote-form-element" id="newVoteOption" name="newVoteOption" placeholder="Write here your own option")
+                input(type="submit" id="vote-submit-btn" class="btn btn-primary btn-block vote-form-element" value="Vote")
+                
+        script(type='text/javascript').
+            var pollData = !{JSON.stringify(poll)};
+        
+block scripts
+    script(src='/node_modules/chart.js/dist/Chart.js')
+    script(src='/controllers/pollDetailController.client.js')
+    script(src='/public/js/fb.sdk.js')

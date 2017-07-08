@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="public/css/normalize.css">
+        <link rel="stylesheet" href="public/css/main.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+
+        <script src="public/js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="public/js/jquery-3.2.1.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+    </head>
+    <header>
+    	<!-- <p>Welcome, <span id="display-name"></span>!</p>
+    	<a class="menu" href="/profile">Profile</a>
+    	<p>|</p>
+    	<a class="menu" href="/logout">Logout</a> -->
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Vote it!</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" id="login-nav-btn">
+              <a class="nav-link" href="/auth/facebook">
+                Sign in with FB
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>-->
+            <li class="nav-item dropdown" id="user-dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="display-name"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Create new poll</a>
+                <a class="dropdown-item" href="#">My polls</a>
+                <a class="dropdown-item" href="/profile">Profile</a>
+                <a class="dropdown-item" href="/logout">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+
+        <div class="container">
+
+          <h2>Create a new poll</h2>
+            <form action="/poll-create" method="post">
+              <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="pollTitleInput" name="pollTitleInput" placeholder="Poll title">
+              </div>
+              <div class="form-group">
+                <label for="pollOptionsInput">Options</label>
+                <textarea class="form-control" id="pollOptionsInput" name="pollOptionsInput" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+
+        </div>
+
+        <script type="text/javascript" src="common/ajax-functions.js"></script>
+        <!-- <script type="text/javascript" src="controllers/pollController.client.js"></script> -->
+		    <script type="text/javascript" src="controllers/userController.client.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            // e.src='https://www.google-analytics.com/analytics.js';
+            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            // ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

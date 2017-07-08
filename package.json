@@ -1,0 +1,24 @@
+{
+  "name": "app_voting",
+  "version": "1.0.0",
+  "description": "An elegant voting app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "voting"
+  ],
+  "author": "Zolbayar Bayarsaikhan",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.6.0",
+    "dotenv": "^4.0.0",
+    "express-session": "^1.15.3",
+    "jquery-validation": "^1.16.0",
+    "mongoose": "^4.7.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "pug": "^2.0.0-rc.2"
+  }
+}
