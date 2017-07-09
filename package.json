@@ -12,6 +12,7 @@
   "author": "Zolbayar Bayarsaikhan",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "chart.js": "^2.6.0",
     "dotenv": "^4.0.0",
     "express": "*",
