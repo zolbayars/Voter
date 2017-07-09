@@ -16,6 +16,7 @@
     "dotenv": "^4.0.0",
     "express": "*",
     "express-session": "^1.15.3",
+    "express-validator": "*",
     "jquery-validation": "^1.16.0",
     "mongoose": "^4.7.2",
     "passport": "^0.3.2",
